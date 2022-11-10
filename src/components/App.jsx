@@ -13,7 +13,7 @@ class App extends Component {
   state = {
     inputData: '',
     items: [],
-    error: null,
+
     status: 'idle',
     totalHits: 0,
   };
@@ -55,11 +55,11 @@ class App extends Component {
         status: 'resolved',
       }));
     } catch (error) {
-      this.setState({ error, status: 'rejected' });
+      this.setState({ status: 'rejected' });
     }
   };
   render() {
-    const { totalHits, status, error, items } = this.state;
+    const { totalHits, status, items } = this.state;
     if (status === 'idle') {
       return (
         <div className="App">
@@ -81,7 +81,7 @@ class App extends Component {
       return (
         <div className="App">
           <Searchbar onSubmit={this.handleSubmit} />
-          <p>{error.mesage}</p>
+          <p>Something wrong, try later</p>
         </div>
       );
     }
