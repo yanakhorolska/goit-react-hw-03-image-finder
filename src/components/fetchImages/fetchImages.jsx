@@ -1,4 +1,4 @@
-﻿import axios from 'axios';
+import axios from 'axios';
 
 export async function fetchImages(inputData, page) {
   const searchParams = new URLSearchParams({
